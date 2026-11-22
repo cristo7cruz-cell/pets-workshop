@@ -1,48 +1,59 @@
 {
     "type": "filament",
-    "name": "PW TPU 95A Calidad @P1S",
-    "inherits": "Bambu TPU 95A HF @BBL P1S",
+    "name": "PW PLA+ SUNLU 2.0 @P1S",
+    "inherits": "SUNLU PLA+ 2.0 @BBL X1C",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
+    "filament_settings_id": [
+        "PW PLA+ SUNLU 2.0 @P1S"
+    ],
     "compatible_printers": [
         "Bambu Lab P1S 0.4 nozzle"
     ],
     "nozzle_temperature": [
+        "220",
+        "220"
+    ],
+    "nozzle_temperature_initial_layer": [
         "225",
         "225"
     ],
-    "nozzle_temperature_initial_layer": [
-        "230",
-        "230"
-    ],
     "textured_plate_temp": [
-        "35"
+        "55"
     ],
     "textured_plate_temp_initial_layer": [
-        "40"
+        "60"
     ],
     "hot_plate_temp": [
-        "35"
+        "55"
     ],
     "hot_plate_temp_initial_layer": [
-        "40"
+        "60"
     ],
     "filament_max_volumetric_speed": [
-        "4",
-        "4"
-    ],
-    "filament_retraction_length": [
-        "0.6",
-        "0.6"
+        "15",
+        "15"
     ],
     "fan_min_speed": [
-        "80"
+        "100"
     ],
     "fan_max_speed": [
         "100"
     ],
     "close_fan_the_first_x_layers": [
         "1"
+    ],
+    "slow_down_layer_time": [
+        "8"
+    ],
+    "filament_scarf_seam_type": [
+        "external"
+    ],
+    "filament_scarf_height": [
+        "10%"
+    ],
+    "filament_scarf_length": [
+        "15"
     ]
 }

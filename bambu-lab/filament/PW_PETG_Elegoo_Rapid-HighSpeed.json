@@ -1,10 +1,13 @@
 {
     "type": "filament",
-    "name": "PW PETG Calidad @P1S",
-    "inherits": "Bambu PETG HF @BBL P1S 0.4 nozzle",
+    "name": "PW PETG Elegoo Rapid-HighSpeed @P1S",
+    "inherits": "Generic PETG HF @BBL P1S 0.4 nozzle",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
+    "filament_settings_id": [
+        "PW PETG Elegoo Rapid-HighSpeed @P1S"
+    ],
     "compatible_printers": [
         "Bambu Lab P1S 0.4 nozzle"
     ],
@@ -13,8 +16,8 @@
         "240"
     ],
     "nozzle_temperature_initial_layer": [
-        "240",
-        "240"
+        "245",
+        "245"
     ],
     "textured_plate_temp": [
         "70"
@@ -29,8 +32,8 @@
         "75"
     ],
     "filament_max_volumetric_speed": [
-        "12",
-        "12"
+        "14",
+        "14"
     ],
     "fan_min_speed": [
         "15"
@@ -46,5 +49,14 @@
     ],
     "slow_down_layer_time": [
         "12"
+    ],
+    "filament_scarf_seam_type": [
+        "external"
+    ],
+    "filament_scarf_height": [
+        "10%"
+    ],
+    "filament_scarf_length": [
+        "15"
     ]
 }
