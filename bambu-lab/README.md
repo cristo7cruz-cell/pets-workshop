@@ -28,13 +28,15 @@ la temperatura correcta y el proceso pone la calidad.
 | **Tapa** con logo o letras | **03 Tapa con Logo 0.12** | PLA (2 colores con el AMS) |
 | Caja con logo **grabado en los lados** | **04 Laterales con Logo 0.08** | PLA o PETG |
 | Pieza que aguante peso o golpes | **05 Resistente 0.20 - Funcional** | **PETG** (Elegoo Rapid / Genérico / Bambu HF) |
-| **Pantalla de lámpara** de una sola pared (forma de jarrón) | **06 Lampara Jarron - Pantalla** | **PETG Translucido - Lamparas** |
+| **Pantalla de lámpara** de una sola pared (forma de jarrón) | **06 Lampara Jarron - Pantalla** | **PETG Rapido - Elegoo Rapid y HF** | 250 / 250 °C | 75 / 70 °C | **20 mm³/s** | 20–50 % | 20 % |
+| **PETG Translucido - Lamparas** |
 | **Lámpara** con formas o piezas cerradas | **07 Lampara Difusa - 2 Paredes** | **PETG Translucido - Lamparas** |
 | Pieza **transparente** sólida | **08 Transparente Solida 0.20** | **PETG Translucido** o **PLA Translucido** |
 | Miniatura con boquilla normal | **09 Miniatura 0.08 (boquilla 0.4)** | **PLA Bambu Matte - Porcelana** (gris) |
 | Miniatura muy chica (1:100, 1:144) | **10 Miniatura 0.06 (boquilla 0.2)** | **… (boquilla 0.2)** |
 | Pieza chica con mucho detalle | **11 Detalle 0.10 (boquilla 0.2)** | **… (boquilla 0.2)** |
 | Pieza flexible | **12 TPU Flexible 0.20** | **TPU 95A - Solo Ext** |
+| **Pieza grande que tiene que salir rápido** (cajas, organizadores) | **13 Rapido 0.24 - Pieza Grande** | **PETG Rapido - Elegoo Rapid y HF** (o tu PLA) |
 
 ---
 
@@ -45,7 +47,11 @@ la temperatura correcta y el proceso pone la calidad.
 El planchado está más fino que el de Bambu: líneas a **0.12 mm** (0.08 mm en boquilla 0.2),
 flujo **10 %** y velocidad **25 mm/s**.
 
-Todos llevan también la **costura bufanda** (ver sección 4), excepto 06 y 12.
+Todos llevan también la **costura bufanda** (ver sección 5), excepto 06 y 12.
+
+**13 Rapido** es la excepción a la regla de calidad: está hecho para piezas grandes donde importa el tiempo.
+No lleva planchado y usa la mitad de material. Con **PETG Rapido** una caja que tardaba ~17 h baja a
+alrededor de un tercio del tiempo. Úsalo con PETG o PLA **de alta velocidad**: el PETG normal no aguanta 20 mm³/s.
 
 | Proceso | Capa | Paredes | Relleno | Pared externa | Notas |
 |---|---|---|---|---|---|
@@ -61,6 +67,7 @@ Todos llevan también la **costura bufanda** (ver sección 4), excepto 06 y 12.
 | **10 Miniatura 0.06 (boquilla 0.2)** | 0.06 | 3 | 15 % | 30 mm/s | Solo con boquilla 0.2; soportes activados |
 | **11 Detalle 0.10 (boquilla 0.2)** | 0.10 | 3 | 15 % | 40 mm/s | Solo con boquilla 0.2 |
 | **12 TPU Flexible 0.20** | 0.20 | 3 | 15 % | 25 mm/s | Sin planchado, sin bufanda, sin borde |
+| **13 Rapido 0.24 - Pieza Grande** | 0.24 | 2 | 10 % cuadrícula | 150 mm/s | **Sin planchado**; velocidades rápidas de Bambu; mantiene la costura bufanda |
 
 Todos usan pared externa **precisa**, paredes **Arachne** (excepto 05), compensación de pata de
 elefante de **0.15 mm** y borde automático. Los soportes van **apagados**, menos en las miniaturas:
@@ -101,6 +108,8 @@ actívalos por pieza (tipo **Árbol auto**).
 - **Translúcidos:** más temperatura y menos velocidad = capas mejor fundidas = pasa más luz y se ve
   más limpio.
 - **El TPU va siempre en la ranura Ext**, nunca en el AMS.
+- **PETG Rapido:** más temperatura (250 °C) y más ventilador para poder empujar el doble de plástico
+  sin que las capas queden débiles. **Solo para PETG de alta velocidad** (Elegoo Rapid, Bambu PETG HF).
 - **Elegoo, MexicoMakers y SUNLU con boquilla 0.2:** usa **PLA Generico (boquilla 0.2)**.
 
 ---
@@ -168,7 +177,7 @@ grupo **Costura**. En español Bambu Studio la llama a veces "costura de **cicat
      cámbialo primero por otro.
 2. **Archivo → Importar → Importar configuraciones** → carpeta `process` → **Ctrl + A** → **Abrir**.
 3. Repite con la carpeta `filament`.
-4. Deben quedar **12 procesos** (01–12) y **18 filamentos** en **Ajustes de usuario**.
+4. Deben quedar **13 procesos** (01–13) y **19 filamentos** en **Ajustes de usuario**.
    Los de **boquilla 0.2** solo se ven cuando eliges la impresora con **boquilla 0.2**.
 5. Se suben solos a tu cuenta de **Bambu Cloud**.
 

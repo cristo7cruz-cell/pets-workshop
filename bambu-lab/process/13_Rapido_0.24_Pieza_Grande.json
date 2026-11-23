@@ -1,0 +1,44 @@
+{
+    "type": "process",
+    "name": "13 Rapido 0.24 - Pieza Grande",
+    "inherits": "0.24mm Draft @BBL X1C",
+    "from": "User",
+    "instantiation": "true",
+    "version": "02.09.00.74",
+    "print_settings_id": "13 Rapido 0.24 - Pieza Grande",
+    "wall_generator": "arachne",
+    "seam_position": "aligned",
+    "top_surface_pattern": "monotonicline",
+    "sparse_infill_pattern": "grid",
+    "elefant_foot_compensation": "0.15",
+    "brim_type": "auto_brim",
+    "support_type": "tree(auto)",
+    "enable_support": "0",
+    "precise_outer_wall": "0",
+    "small_perimeter_speed": [
+        "50%",
+        "50%"
+    ],
+    "override_filament_scarf_seam_setting": "1",
+    "seam_slope_type": "external",
+    "seam_slope_conditional": "1",
+    "scarf_angle_threshold": "155",
+    "seam_slope_start_height": "10%",
+    "seam_slope_min_length": "15",
+    "seam_slope_steps": "10",
+    "seam_slope_entire_loop": "0",
+    "seam_slope_inner_walls": "1",
+    "ironing_type": "no ironing",
+    "wall_loops": "2",
+    "top_shell_layers": "4",
+    "bottom_shell_layers": "3",
+    "sparse_infill_density": "10%",
+    "outer_wall_speed": [
+        "150",
+        "150"
+    ],
+    "outer_wall_acceleration": [
+        "5000",
+        "5000"
+    ]
+}
