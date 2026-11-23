@@ -1,12 +1,12 @@
 {
     "type": "filament",
-    "name": "PW PLA+ SUNLU 2.0 @P1S",
-    "inherits": "SUNLU PLA+ 2.0 @BBL X1C",
+    "name": "PLA Bambu Matte - Porcelana",
+    "inherits": "Bambu PLA Matte @BBL P1S 0.4 nozzle",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
     "filament_settings_id": [
-        "PW PLA+ SUNLU 2.0 @P1S"
+        "PLA Bambu Matte - Porcelana"
     ],
     "compatible_printers": [
         "Bambu Lab P1S 0.4 nozzle"
@@ -16,8 +16,8 @@
         "220"
     ],
     "nozzle_temperature_initial_layer": [
-        "225",
-        "225"
+        "220",
+        "220"
     ],
     "textured_plate_temp": [
         "55"
@@ -47,6 +47,7 @@
     "slow_down_layer_time": [
         "8"
     ],
+    "ironing_fan_speed": "50",
     "filament_scarf_seam_type": [
         "external"
     ],

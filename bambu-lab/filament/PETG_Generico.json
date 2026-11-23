@@ -1,49 +1,53 @@
 {
     "type": "filament",
-    "name": "PW PLA Silk @P1S",
-    "inherits": "Generic PLA Silk",
+    "name": "PETG Generico",
+    "inherits": "Generic PETG",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
     "filament_settings_id": [
-        "PW PLA Silk @P1S"
+        "PETG Generico"
     ],
     "compatible_printers": [
         "Bambu Lab P1S 0.4 nozzle"
     ],
     "nozzle_temperature": [
-        "220"
+        "235"
     ],
     "nozzle_temperature_initial_layer": [
-        "225"
+        "240"
     ],
     "textured_plate_temp": [
-        "55"
+        "70"
     ],
     "textured_plate_temp_initial_layer": [
-        "60"
+        "75"
     ],
     "hot_plate_temp": [
-        "55"
+        "70"
     ],
     "hot_plate_temp_initial_layer": [
-        "60"
+        "75"
     ],
     "filament_max_volumetric_speed": [
-        "8"
+        "10"
     ],
     "fan_min_speed": [
-        "100"
+        "15"
     ],
     "fan_max_speed": [
-        "100"
+        "40"
+    ],
+    "overhang_fan_speed": [
+        "90"
     ],
     "close_fan_the_first_x_layers": [
-        "1"
+        "3"
     ],
     "slow_down_layer_time": [
-        "8"
+        "12"
     ],
+    "ironing_fan_speed": "20",
     "filament_scarf_seam_type": [
         "external"
     ],

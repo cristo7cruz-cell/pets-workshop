@@ -1,21 +1,23 @@
 {
     "type": "filament",
-    "name": "PW PLA Elegoo @P1S",
-    "inherits": "Generic PLA",
+    "name": "PLA Bambu Basic (boquilla 0.2)",
+    "inherits": "Bambu PLA Basic @BBL X1C 0.2 nozzle",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
     "filament_settings_id": [
-        "PW PLA Elegoo @P1S"
+        "PLA Bambu Basic (boquilla 0.2)"
     ],
     "compatible_printers": [
-        "Bambu Lab P1S 0.4 nozzle"
+        "Bambu Lab P1S 0.2 nozzle"
     ],
     "nozzle_temperature": [
-        "210"
+        "215",
+        "215"
     ],
     "nozzle_temperature_initial_layer": [
-        "215"
+        "220",
+        "220"
     ],
     "textured_plate_temp": [
         "55"
@@ -30,7 +32,8 @@
         "60"
     ],
     "filament_max_volumetric_speed": [
-        "15"
+        "2",
+        "2"
     ],
     "fan_min_speed": [
         "100"
@@ -42,8 +45,9 @@
         "1"
     ],
     "slow_down_layer_time": [
-        "8"
+        "10"
     ],
+    "ironing_fan_speed": "50",
     "filament_scarf_seam_type": [
         "external"
     ],
@@ -51,6 +55,6 @@
         "10%"
     ],
     "filament_scarf_length": [
-        "15"
+        "5"
     ]
 }

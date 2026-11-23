@@ -1,21 +1,23 @@
 {
     "type": "filament",
-    "name": "PW PLA Generico @P1S 0.2",
-    "inherits": "Generic PLA @0.2 nozzle",
+    "name": "PLA Bambu Basic",
+    "inherits": "Bambu PLA Basic @BBL P1S 0.4 nozzle",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
     "filament_settings_id": [
-        "PW PLA Generico @P1S 0.2"
+        "PLA Bambu Basic"
     ],
     "compatible_printers": [
-        "Bambu Lab P1S 0.2 nozzle"
+        "Bambu Lab P1S 0.4 nozzle"
     ],
     "nozzle_temperature": [
-        "210"
+        "215",
+        "215"
     ],
     "nozzle_temperature_initial_layer": [
-        "215"
+        "220",
+        "220"
     ],
     "textured_plate_temp": [
         "55"
@@ -30,7 +32,8 @@
         "60"
     ],
     "filament_max_volumetric_speed": [
-        "1.6"
+        "15",
+        "15"
     ],
     "fan_min_speed": [
         "100"
@@ -42,8 +45,9 @@
         "1"
     ],
     "slow_down_layer_time": [
-        "10"
+        "8"
     ],
+    "ironing_fan_speed": "50",
     "filament_scarf_seam_type": [
         "external"
     ],
@@ -51,6 +55,6 @@
         "10%"
     ],
     "filament_scarf_length": [
-        "5"
+        "15"
     ]
 }

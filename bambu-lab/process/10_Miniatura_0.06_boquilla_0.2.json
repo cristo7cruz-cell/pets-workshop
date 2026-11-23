@@ -1,11 +1,11 @@
 {
     "type": "process",
-    "name": "PW Miniatura 0.06mm @P1S 0.2",
+    "name": "10 Miniatura 0.06 (boquilla 0.2)",
     "inherits": "0.06mm High Quality @BBL X1C 0.2 nozzle",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
-    "print_settings_id": "PW Miniatura 0.06mm @P1S 0.2",
+    "print_settings_id": "10 Miniatura 0.06 (boquilla 0.2)",
     "wall_generator": "arachne",
     "seam_position": "back",
     "top_surface_pattern": "monotonicline",
@@ -14,6 +14,11 @@
     "brim_type": "auto_brim",
     "support_type": "tree(auto)",
     "enable_support": "1",
+    "precise_outer_wall": "1",
+    "small_perimeter_speed": [
+        "50%",
+        "50%"
+    ],
     "override_filament_scarf_seam_setting": "1",
     "seam_slope_type": "external",
     "seam_slope_conditional": "1",
@@ -23,12 +28,12 @@
     "seam_slope_steps": "10",
     "seam_slope_entire_loop": "0",
     "seam_slope_inner_walls": "1",
-    "small_perimeter_speed": [
-        "50%",
-        "50%"
-    ],
-    "sparse_infill_density": "15%",
+    "ironing_type": "top",
+    "ironing_flow": "10%",
+    "ironing_spacing": "0.08",
+    "ironing_speed": "25",
     "wall_loops": "3",
+    "sparse_infill_density": "15%",
     "outer_wall_speed": [
         "30",
         "30"

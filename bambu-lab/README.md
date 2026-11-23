@@ -1,287 +1,254 @@
-# Configuraciones Bambu Studio – Bambu Lab P1S Combo (prioridad: calidad)
+# Presets Bambu Studio – Bambu Lab P1S Combo (calidad tipo porcelana)
 
-> **Estado: PREPARADAS, NO IMPLEMENTADAS.** Ningún archivo se ha importado todavía en Bambu Studio.
-> Cuando quieras aplicarlas, sigue la sección **3. Cómo importarlas**.
+Impresora: **Bambu Lab P1S (Combo con AMS)**, placa **PEI texturizada**, boquilla **0.4**
+(y presets opcionales para boquilla **0.2**).
 
-- Impresora: **Bambu Lab P1S (Combo con AMS), boquilla 0.4 mm**, placa **PEI texturizada**.
-- Todos los presets empiezan con **"PW"** (Pets Workshop). Así no chocan con tus presets actuales
-  (`PERFIL ONE`, `ELEEGO_PLA`, etc.); **importarlos no borra ni cambia nada de lo que ya tienes**.
-- Cada preset **hereda** de un perfil oficial de Bambu (o de los genéricos que trae Bambu Studio)
-  y solo cambia lo necesario para dar más calidad.
-- Todos los archivos se revisaron contra el código fuente de Bambu Studio: claves válidas, valores
-  permitidos y perfiles base compatibles con la P1S. Todavía no se han probado en el programa real.
+## Cómo funciona: elige 2 cosas
 
----
+En Bambu Studio cada impresión usa **dos** ajustes:
 
-## 1. Procesos (`process/`) – cómo se imprime la pieza
-
-| Preset | Basado en | Para qué |
+| Qué eliges | Dónde | Qué controla |
 |---|---|---|
-| **PW Calidad Fina 0.12mm** | 0.12mm High Quality | Figuras, placas con nombre, letras pequeñas. **Ideal para el PLA Silk.** |
-| **PW Calidad 0.16mm** ⭐ | 0.16mm High Quality | **El de uso diario.** Sustituye al "0.20mm Standard" que usas ahora. |
-| **PW Resistente 0.20mm** | 0.20mm Strength | Piezas funcionales con carga o golpes (PETG, ABS, ASA). |
-| **PW Transparente 0.20mm** | 0.20mm Standard | Piezas con filamento transparente: relleno 100 %, líneas en una sola dirección, lento. |
-| **PW TPU Flexible 0.20mm** | 0.20mm Standard | Solo TPU: muy lento y sin costura bufanda. |
-| **PW Tapa Logo 0.12mm** | 0.12mm High Quality | Tapas con logo o letras arriba: **alisado** activado para dejar la tapa lisa (ver sección 9). |
-| **PW Laterales Detalle 0.08mm** | 0.08mm High Quality | Logos grabados o en relieve en las **paredes laterales** (ver sección 9). |
-| **PW Miniatura 0.08mm** | 0.08mm High Quality | Miniaturas con la boquilla **0.4** normal; soportes de árbol activados (ver sección 10). |
-| **PW Miniatura 0.06mm (boquilla 0.2)** | 0.06mm High Quality 0.2 | Miniaturas muy pequeñas (1:100, 1:144…). **Necesita boquilla 0.2.** |
-| **PW Detalle 0.10mm (boquilla 0.2)** | 0.10mm High Quality 0.2 | Piezas pequeñas con mucho detalle, más rápido que el de 0.06. **Necesita boquilla 0.2.** |
+| **Proceso** = *qué tipo de pieza vas a hacer* | Menú **Proceso** | Altura de capa, paredes, relleno, **planchado**, costura, velocidad |
+| **Filamento** = *qué rollo tienes puesto* | **Filamentos del proyecto** / ranura del AMS | **Temperaturas**, ventilador, flujo máximo |
 
-| Ajuste | Fina 0.12 | Calidad 0.16 | Resistente 0.20 | Transparente 0.20 | TPU 0.20 |
+Los procesos están **numerados del 01 al 12** para que salgan en orden en el menú.
+Los filamentos tienen **el nombre del rollo**. No hay que combinarlos a mano: el filamento pone
+la temperatura correcta y el proceso pone la calidad.
+
+---
+
+## Recetas rápidas (necesidad → qué seleccionar)
+
+| Quiero hacer… | Proceso | Filamento |
+|---|---|---|
+| Figura o pieza decorativa **tipo porcelana** | **01 Porcelana 0.12 - Decorativa** | **PLA Bambu Matte - Porcelana** (blanco = porcelana) |
+| Pieza normal, bonita y sin tardar tanto | **02 Uso Diario 0.16 - Planchado** | El PLA o PETG que tengas |
+| Pieza dorada brillante | **01 Porcelana 0.12** o **02 Uso Diario 0.16** | **PLA Silk Dorado** |
+| **Tapa** con logo o letras | **03 Tapa con Logo 0.12** | PLA (2 colores con el AMS) |
+| Caja con logo **grabado en los lados** | **04 Laterales con Logo 0.08** | PLA o PETG |
+| Pieza que aguante peso o golpes | **05 Resistente 0.20 - Funcional** | **PETG** (Elegoo Rapid / Genérico / Bambu HF) |
+| **Pantalla de lámpara** de una sola pared (forma de jarrón) | **06 Lampara Jarron - Pantalla** | **PETG Translucido - Lamparas** |
+| **Lámpara** con formas o piezas cerradas | **07 Lampara Difusa - 2 Paredes** | **PETG Translucido - Lamparas** |
+| Pieza **transparente** sólida | **08 Transparente Solida 0.20** | **PETG Translucido** o **PLA Translucido** |
+| Miniatura con boquilla normal | **09 Miniatura 0.08 (boquilla 0.4)** | **PLA Bambu Matte - Porcelana** (gris) |
+| Miniatura muy chica (1:100, 1:144) | **10 Miniatura 0.06 (boquilla 0.2)** | **… (boquilla 0.2)** |
+| Pieza chica con mucho detalle | **11 Detalle 0.10 (boquilla 0.2)** | **… (boquilla 0.2)** |
+| Pieza flexible | **12 TPU Flexible 0.20** | **TPU 95A - Solo Ext** |
+
+---
+
+## 1. Procesos (`process/`)
+
+**Todos llevan planchado** (*Alisado* → *Tipo de planchado: Superficies superiores*), excepto
+**06** (en modo jarrón no hay tapas que planchar) y **12** (el TPU se embarra al planchar).
+El planchado está más fino que el de Bambu: líneas a **0.12 mm** (0.08 mm en boquilla 0.2),
+flujo **10 %** y velocidad **25 mm/s**.
+
+Todos llevan también la **costura bufanda** (ver sección 4), excepto 06 y 12.
+
+| Proceso | Capa | Paredes | Relleno | Pared externa | Notas |
 |---|---|---|---|---|---|
-| Paredes | 3 | 3 | 4 | 2 | 3 |
-| Capas sup. / inf. | 7 / 5 | 6 / 4 | 5 / 4 | 4 / 4 | 4 / 4 |
-| Relleno | 15 % giroide | 20 % giroide | 30 % giroide | **100 %** zig-zag | 15 % giroide |
-| Pared externa | 50 mm/s | 60 mm/s | 60 mm/s | 40 mm/s | 25 mm/s |
-| Superficie superior | 100 mm/s | 120 mm/s | 120 mm/s | 50 mm/s | 25 mm/s |
-| Acel. pared externa | 1500 | 2000 | 2000 | 1500 | 1000 |
-| **Costura** | Alineada + **bufanda** | Alineada + **bufanda** | Alineada + **bufanda** | Alineada + **bufanda** | Alineada, sin bufanda |
-| Pata de elefante | 0.15 mm | 0.15 mm | 0.15 mm | 0.15 mm | 0.15 mm |
-| Borde (brim) | Auto | Auto | Auto | Auto | Sin borde |
-| Soportes | Apagados (actívalos por pieza; tipo **Árbol auto**) | igual | igual | igual | igual |
+| **01 Porcelana 0.12 - Decorativa** | 0.12 | 3 | 15 % | 45 mm/s | 8 capas arriba para tapas perfectas; aceleración baja |
+| **02 Uso Diario 0.16 - Planchado** | 0.16 | 3 | 20 % | 60 mm/s | Equilibrio calidad / tiempo |
+| **03 Tapa con Logo 0.12** | 0.12 | 3 | 15 % | 50 mm/s | Costura atrás; 8 capas arriba |
+| **04 Laterales con Logo 0.08** | 0.08 | 3 | 15 % | 40 mm/s | Capas muy finas para logos en paredes; costura atrás |
+| **05 Resistente 0.20 - Funcional** | 0.20 | 4 | 30 % | 60 mm/s | Pared clásica, más resistente |
+| **06 Lampara Jarron - Pantalla** | 0.20 | 1 | 0 % | 40 mm/s | **Modo jarrón en espiral**: sin costura; línea de 0.5 mm, más firme |
+| **07 Lampara Difusa - 2 Paredes** | 0.20 | 2 | **0 %** | 40 mm/s | Hueca por dentro: la luz pasa pareja, sin sombras del relleno |
+| **08 Transparente Solida 0.20** | 0.20 | 2 | **100 %** | 40 mm/s | Líneas en una dirección: lo más transparente posible |
+| **09 Miniatura 0.08 (boquilla 0.4)** | 0.08 | 2 | 15 % | 30 mm/s | Soportes de árbol activados |
+| **10 Miniatura 0.06 (boquilla 0.2)** | 0.06 | 3 | 15 % | 30 mm/s | Solo con boquilla 0.2; soportes activados |
+| **11 Detalle 0.10 (boquilla 0.2)** | 0.10 | 3 | 15 % | 40 mm/s | Solo con boquilla 0.2 |
+| **12 TPU Flexible 0.20** | 0.20 | 3 | 15 % | 25 mm/s | Sin planchado, sin bufanda, sin borde |
+
+Todos usan pared externa **precisa**, paredes **Arachne** (excepto 05), compensación de pata de
+elefante de **0.15 mm** y borde automático. Los soportes van **apagados**, menos en las miniaturas:
+actívalos por pieza (tipo **Árbol auto**).
 
 ---
 
-## 2. Filamentos (`filament/`) – uno por cada filamento que tienes (y los que puedas comprar)
+## 2. Filamentos (`filament/`)
 
-**Qué preset usar con tus filamentos actuales:**
-
-| Lo que tienes ahora en Bambu Studio / en mano | Usa este preset nuevo |
-|---|---|
-| Rollo **PLA Silk – Silk Gold** (el de la foto) | **PW PLA Silk** |
-| `ELEEGO_PLA` | **PW PLA Elegoo** |
-| `ELEEGO-HIGHSPEED PETG` (los dos) | **PW PETG Elegoo Rapid-HighSpeed** |
-| `MexicoMakers_PLA` y cualquier PLA sin perfil | **PW PLA MexicoMakers-Generico** |
-| `SUNLU PLA+ 2.0 @BBL X1C - Copiar` | **PW PLA+ SUNLU 2.0** |
-| `PETG_GENERICO` | **PW PETG Generico** |
-| `FILAMENTO_TRANSPARENTE` (si es PETG) | **PW PETG Transparente** + proceso **PW Transparente** |
-| `FILAMENTO_TRANSPARENTE` (si es PLA) | **PW PLA MexicoMakers-Generico** + proceso **PW Transparente** |
-| Bambu PLA Basic / PLA Matte / PETG HF | **PW PLA Bambu Basic** / **PW PLA Bambu Matte** / **PW PETG Bambu HF** |
-| TPU 95A (cualquier marca) | **PW TPU 95A** |
-| Cualquier PLA/PETG con **boquilla 0.2** | **PW PLA Bambu Basic / PLA Bambu Matte / PLA Generico / PETG Generico (boquilla 0.2)** |
-| ABS / ASA (por si compras) | **PW ABS** / **PW ASA** |
-
-**Valores principales** (boquilla 1ª capa / resto · cama PEI 1ª capa / resto · flujo máx.):
-
-| Preset | Basado en | Boquilla | Cama | Flujo máx. | Ventilador |
+| Filamento | Boquilla (1ª capa / resto) | Cama PEI (1ª / resto) | Flujo máx. | Ventilador | Vent. al planchar |
 |---|---|---|---|---|---|
-| PW PLA Bambu Basic | Bambu PLA Basic | 220 / 215 °C | 60 / 55 °C | 15 mm³/s | 100 % |
-| PW PLA Bambu Matte | Bambu PLA Matte | 220 / 220 °C | 60 / 55 °C | 15 mm³/s | 100 % |
-| **PW PLA Silk** | Generic PLA Silk | 225 / 220 °C | 60 / 55 °C | **8 mm³/s** | 100 % |
-| PW PLA Elegoo | Generic PLA | 215 / 210 °C | 60 / 55 °C | 15 mm³/s | 100 % |
-| PW PLA MexicoMakers-Generico | Generic PLA | 215 / 210 °C | 60 / 55 °C | 12 mm³/s | 100 % |
-| PW PLA+ SUNLU 2.0 | SUNLU PLA+ 2.0 | 225 / 220 °C | 60 / 55 °C | 15 mm³/s | 100 % |
-| PW PETG Bambu HF | Bambu PETG HF | 240 / 240 °C | 75 / 70 °C | 12 mm³/s | 15–40 % |
-| PW PETG Elegoo Rapid-HighSpeed | Generic PETG HF | 245 / 240 °C | 75 / 70 °C | 14 mm³/s | 15–40 % |
-| PW PETG Generico | Generic PETG | 240 / 235 °C | 75 / 70 °C | 10 mm³/s | 15–40 % |
-| PW PETG Transparente | Bambu PETG Translucent | 250 / 250 °C | 75 / 70 °C | 6 mm³/s | 10–30 % |
-| PW TPU 95A | Bambu TPU 95A HF | 230 / 225 °C | 40 / 35 °C | 4 mm³/s | 80–100 % |
-| PW ABS | Bambu ABS | 260 / 260 °C | 95 / 90 °C | 12 mm³/s | 10–30 % |
-| PW ASA | Generic ASA | 260 / 260 °C | 100 / 100 °C | 10 mm³/s | 10–30 % |
+| **PLA Bambu Basic** | 220 / 215 °C | 60 / 55 °C | 15 mm³/s | 100 % | 50 % |
+| **PLA Bambu Matte - Porcelana** | 220 / 220 °C | 60 / 55 °C | 15 mm³/s | 100 % | 50 % |
+| **PLA Silk Dorado** | 225 / 220 °C | 60 / 55 °C | 8 mm³/s | 100 % | 50 % |
+| **PLA Elegoo** | 215 / 210 °C | 60 / 55 °C | 15 mm³/s | 100 % | 50 % |
+| **PLA MexicoMakers - Generico** | 215 / 210 °C | 60 / 55 °C | 12 mm³/s | 100 % | 50 % |
+| **PLA+ SUNLU 2.0** | 225 / 220 °C | 60 / 55 °C | 15 mm³/s | 100 % | 50 % |
+| **PLA Translucido - Lamparas** | 230 / 225 °C | 60 / 55 °C | 8 mm³/s | 80–100 % | 50 % |
+| **PETG Bambu HF** | 240 / 240 °C | 75 / 70 °C | 12 mm³/s | 15–40 % | 20 % |
+| **PETG Elegoo Rapid** | 245 / 240 °C | 75 / 70 °C | 14 mm³/s | 15–40 % | 20 % |
+| **PETG Generico** | 240 / 235 °C | 75 / 70 °C | 10 mm³/s | 15–40 % | 20 % |
+| **PETG Translucido - Lamparas** | 250 / 250 °C | 75 / 70 °C | 6 mm³/s | 10–30 % | 20 % |
+| **TPU 95A - Solo Ext** | 230 / 225 °C | 40 / 35 °C | 4 mm³/s | 80–100 % | – |
+| **ABS** | 260 / 260 °C | 95 / 90 °C | 12 mm³/s | 10–30 % | 10 % |
+| **ASA** | 260 / 260 °C | 100 / 100 °C | 10 mm³/s | 10–30 % | 10 % |
+| **PLA Bambu Basic (boquilla 0.2)** | 220 / 215 °C | 60 / 55 °C | 2 mm³/s | 100 % | 50 % |
+| **PLA Bambu Matte (boquilla 0.2)** | 220 / 220 °C | 60 / 55 °C | 2 mm³/s | 100 % | 50 % |
+| **PLA Generico (boquilla 0.2)** | 215 / 210 °C | 60 / 55 °C | 1.6 mm³/s | 100 % | 50 % |
+| **PETG Generico (boquilla 0.2)** | 245 / 240 °C | 75 / 70 °C | 1 mm³/s | 15–40 % | 20 % |
 
-El **flujo máximo (velocidad volumétrica)** es el freno de calidad: aunque el proceso pida más
-velocidad, la impresora nunca empuja más plástico que ese límite.
-
-### Tu rollo de PLA Silk (Silk Gold)
-
-- La etiqueta dice **190–230 °C**. El preset usa **220 °C** (225 °C en la 1ª capa), que es donde el
-  silk saca más brillo. Si ves hilos, baja a 215 °C; si se ve opaco o se rompen las capas, sube a 225 °C.
-- **Sécalo antes de usarlo: 55 °C durante 8 h** (lo dice la etiqueta). Al silk húmedo se le va el brillo.
-- Usa el proceso **PW Calidad Fina 0.12mm** o **PW Calidad 0.16mm**. El brillo se ve mejor con capas finas.
-- **No uses alisado (planchado)** con silk: le quita el brillo.
-- El silk es más **frágil** que el PLA normal; úsalo para piezas decorativas, no funcionales.
-
----
-
-## 3. Cómo importarlas
-
-1. En Bambu Studio: **Archivo → Importar → Importar configuraciones…**
-2. Selecciona **todos** los `.json` de `process/` y de `filament/` (27 archivos: 10 de proceso y 17 de filamento).
-   Los de **boquilla 0.2** solo aparecen cuando eliges la impresora **P1S con boquilla 0.2**; es normal no verlos con la 0.4.
-3. Aparecerán en **Ajustes de usuario** (dentro de **Personalizado**), igual que tus presets actuales.
-4. Si eso no funciona, abre el perfil base que dice la tabla, cambia a mano los valores de las tablas y
-   guárdalo con el mismo nombre (ver la sección 4).
+**Por qué estos valores:**
+- **Flujo máximo bajo:** frena la impresora para que cada capa se asiente bien. Es el ajuste que más
+  influye en la calidad de las paredes.
+- **Ventilador al planchar más bajo:** la plancha alisa mejor el plástico si está un poco más caliente.
+- **PLA Silk:** 220 °C y lento es donde saca más brillo. Su etiqueta dice 190–230 °C. **Sécalo a 55 °C
+  durante 8 h** antes de usarlo. El planchado deja las tapas un poco menos brillantes que los lados.
+  Si quieres todo brillante, quita el planchado en esa pieza (Calidad → Alisado → *Ninguno*).
+- **Translúcidos:** más temperatura y menos velocidad = capas mejor fundidas = pasa más luz y se ve
+  más limpio.
+- **El TPU va siempre en la ranura Ext**, nunca en el AMS.
+- **Elegoo, MexicoMakers y SUNLU con boquilla 0.2:** usa **PLA Generico (boquilla 0.2)**.
 
 ---
 
-## 4. Cómo se guarda una configuración de filamento (para cualquier filamento nuevo)
+## 3. Lámparas con filamento translúcido
 
-Así se hace en Bambu Studio cuando compras un filamento que no tiene perfil:
-
-1. En **Filamentos del proyecto**, abre el menú del filamento y elige un **perfil base parecido**
-   en **Ajustes del sistema**:
-   - PLA normal → `Generic` → **Generic PLA**
-   - PLA Silk → `Generic` → **Generic PLA Silk**
-   - PETG de alta velocidad → `Generic` → **Generic PETG HF**
-   - PETG normal → `Generic` → **Generic PETG**
-   - TPU → `Generic` → **Generic TPU**
-   - Si la marca aparece en la lista (Bambu, Polymaker, Overture, eSUN, SUNLU…), usa el perfil de esa marca.
-2. Haz clic en el **icono de editar** (junto al filamento) para abrir sus ajustes.
-3. Cambia **temperatura de boquilla** y **cama** según la etiqueta del rollo, y la **velocidad volumétrica máxima**.
-4. Activa la **costura bufanda** (sección 5). Puedes hacerlo aquí, en el filamento.
-5. Haz clic en el **icono de guardar (disquete)** → **Guardar como** → escribe un nombre claro,
-   por ejemplo `Elegoo PLA Silk Oro`.
-6. Quedará en **Ajustes de usuario → Personalizado**. Si tienes sesión iniciada en tu cuenta Bambu,
-   se sincroniza solo con la nube y lo verás en cualquier computadora.
-7. **Copia de seguridad:** Archivo → Exportar → **Exportar Preset Bundle** (guarda todos tus presets en un archivo).
-   En Windows también quedan en `%APPDATA%\BambuStudio\user\<tu número>\filament\` y `...\process\`.
-8. **En el AMS:** pestaña **Dispositivo** → haz clic en la ranura del AMS → elige el preset y el color.
-   Ahí mismo se guarda el valor de **dinámica de flujo (K)** que salga de la calibración.
+- **Usa PETG translúcido para lámparas**, no PLA. El PLA se empieza a deformar a ~55 °C y el PETG
+  aguanta ~75 °C.
+- **Usa solo focos LED.** Los focos incandescentes o halógenos calientan demasiado y pueden deformar
+  o quemar la pieza.
+- **06 Lampara Jarron - Pantalla:** para pantallas de **una sola pared** (cilindros, conos, formas
+  onduladas). La impresora sube en espiral sin parar, así que **no hay costura** y la luz sale pareja.
+  Solo funciona con piezas de **una sola pieza y abiertas por arriba**.
+- **07 Lampara Difusa - 2 Paredes:** para lámparas con formas cerradas, esferas o figuras. Van
+  **huecas por dentro** (relleno 0 %) para que el relleno no haga sombras.
+- **08 Transparente Solida 0.20:** para piezas **macizas y transparentes** (prismas, bloques). Relleno
+  al 100 % con todas las líneas en la misma dirección.
+- La pieza con translúcido **nunca queda transparente como vidrio**: queda como vidrio esmerilado.
+  Con más temperatura y menos velocidad (ya incluido) se ve más clara.
+- Puedes guardar el **PLA Translucido** para piezas decorativas sin foco o con LED de poca potencia.
 
 ---
 
-## 5. Costura bufanda (scarf seam) – para que no se vea la costura
+## 4. Para que no se vea "en escalones"
 
-La **costura bufanda** hace que el inicio y el final de cada vuelta se **traslapen en rampa**
-(como un corte en diagonal), en lugar de empezar y terminar en el mismo punto. Así desaparece la
-"cicatriz" vertical que deja la costura normal, sobre todo en piezas **redondas o curvas**.
-
-**Qué ya hacen los presets PW:**
-
-- **Procesos PW** (salvo TPU): costura **alineada** + bufanda en el **contorno externo**,
-  con **aplicación inteligente** activada. En piezas con esquinas, la costura normal se esconde en una esquina.
-  En piezas redondas (donde no hay esquina) se usa la bufanda. Es la mejor combinación.
-  Ajustes: longitud 15 mm, inicio al 10 % de la altura de capa, 10 pasos, también en paredes internas.
-- Los procesos PW tienen activado **"Anular el ajuste de costura de filamento para bufanda"**. Así la
-  bufanda funciona **con cualquier filamento**, incluidos tus presets actuales (`ELEEGO_PLA`, etc.).
-- **Filamentos PW** (salvo TPU): también traen la bufanda activada (contorno, 15 mm, 10 %), así que
-  funciona aunque uses tus procesos viejos (`PERFIL ONE`, `perfil_1`…).
-
-**Para activarla a mano en un preset tuyo** (en español, Bambu Studio la llama a veces
-"costura de **cicatriz**" o "**Scarf**"; es lo mismo):
-
-- Primero activa el interruptor **Avanzado** en los ajustes; si no, estas opciones no aparecen.
-- **En el proceso:** pestaña **Calidad** → grupo **Costura**:
-  - *Posición de la costura*: **Alineado**
-  - *Anular el ajuste de costura de filamento para bufanda*: ✅
-  - *Tipo de costura de cicatriz*: **Contorno**
-  - *Aplicación inteligente de costura de cicatriz*: ✅
-  - *Longitud de Scarf*: **15** · *Altura inicial de la Scarf*: **10 %**
-  - *Junta tipo Scarf para paredes interiores*: ✅
-- **En el filamento:** editar filamento → busca *Tipo de costura de cicatriz* → **Contorno**,
-  *Longitud de Scarf* **15**, *Altura inicial de la Scarf* **10 %** → **Guardar**.
-
-**Por qué el TPU no lleva bufanda:** el TPU es elástico y no responde con precisión a los cambios
-de flujo de la rampa; la costura sale peor. Para TPU se usa la costura alineada normal.
+- **Las capas siempre se notan un poco en curvas y en superficies inclinadas.** Es como funcionan
+  las impresoras de filamento. El planchado solo alisa las **superficies planas de arriba**.
+- **Así se reducen al mínimo:**
+  1. Usa capa fina: **01 Porcelana 0.12** o **04 Laterales con Logo 0.08**.
+  2. Selecciona la pieza → icono **Altura de capa variable** (en la barra de herramientas sobre la vista 3D) →
+     **Adaptativo** → **Alisado**. Bambu Studio pone capas más finas solo en las curvas y más gruesas en
+     lo recto. Se hace con cada pieza (no se puede guardar en el preset) y tarda 5 segundos.
+  3. Usa **PLA mate** (*PLA Bambu Matte - Porcelana*): el acabado mate esconde las líneas de capa. En
+     blanco parece porcelana.
+  4. Orienta la pieza para que las curvas más visibles queden **de lado** y no "acostadas".
+- **Si quieres que parezca porcelana de verdad:** lija con grano 400 → 800 → 1500 y aplica primer en
+  aerosol (relleno de imprimación) y pintura brillante.
 
 ---
 
-## 6. Calibración el primer día (y con cada rollo/marca nueva)
+## 5. Costura bufanda (que no se vea la costura)
 
-1. **Calibración automática** al encender por primera vez (nivelación + vibraciones).
-2. **Calibración → Dinámica de flujo** (método manual con patrón). La P1S no tiene lidar,
-   así que este paso mejora mucho las esquinas y la costura. Guarda el resultado con el nombre del filamento.
-3. **Calibración → Velocidad de flujo** (pasada 1 y 2). Guarda el valor en el preset del filamento.
-4. Si un filamento nuevo no se ve bien, imprime una **torre de temperatura** (hay muchas gratis en
-   MakerWorld) y quédate con la temperatura que se vea mejor. Es lo más útil para silk y marcas desconocidas.
-5. **Secar** PETG (65 °C / 6 h), TPU (55 °C / 6 h) y silk (55 °C / 8 h) antes de usarlos.
+La costura bufanda empalma el inicio y el final de cada vuelta **en rampa** y quita la "cicatriz"
+vertical. Los procesos 01–05 y 07–11 la tienen activada en modo **inteligente**:
+- En piezas con esquinas, la costura normal se esconde en una esquina.
+- En piezas redondas se usa la bufanda.
 
----
-
-## 7. Reglas importantes de la P1S Combo
-
-- **El TPU NO va en el AMS** (se atasca). Va en el portarrollos trasero y en Bambu Studio eliges la
-  ranura **"Ext"**. Imprime TPU solo, sin cambios de color.
-- **PLA y PLA Silk:** deja la **puerta abierta o la tapa superior levantada**; con todo cerrado el PLA
-  se ablanda antes de tiempo y se deforma.
-- **PETG:** puerta y tapa cerradas.
-- **ABS y ASA:** puerta y tapa **cerradas**, calienta la cama 5–10 min antes, y la impresora en un
-  **cuarto ventilado** (sueltan gases). Usa el proceso **PW Resistente 0.20mm**.
-- **PETG en placa lisa (Smooth PEI, si compras una):** usa **pegamento en barra** como separador;
-  si no, el PETG puede arrancar trozos de la placa. En la PEI texturizada no hace falta.
-- **No imprimas** filamentos con fibra de carbono, brillan en la oscuridad (glow) o con madera
-  con la boquilla de acero inoxidable original: se desgasta. Para eso se necesita una **boquilla de acero endurecido**.
-- Limpia la placa con agua y jabón de vez en cuando y no toques la superficie con los dedos.
-- **Truco con el AMS:** PLA para la pieza + PETG solo en la **interfaz de soportes**. No se pegan
-  bien entre sí, así que el soporte se quita fácil y deja la cara de abajo limpia.
+Si lo quieres ajustar a mano (activa el interruptor **Avanzado**), está en la pestaña **Calidad** →
+grupo **Costura**. En español Bambu Studio la llama a veces "costura de **cicatriz**" o "**Scarf**":
+- *Anular el ajuste de costura de filamento para bufanda*: ✅
+- *Tipo de costura de cicatriz*: **Contorno**
+- *Aplicación inteligente de costura de cicatriz*: ✅
+- *Longitud de Scarf*: **15**
+- *Altura inicial de la Scarf*: **10 %**
 
 ---
 
-## 8. Ajustes opcionales por pieza (no activados en los presets)
+## 6. Cómo importarlas (y quitar las anteriores)
 
-- **Alisado (planchado):** Calidad → Alisado → *Tipo de planchado*: "Superficies superiores". Deja las tapas planas como espejo
-  (no en silk ni en piezas curvas). Añade tiempo.
-- **Soportes:** actívalos solo cuando la pieza los necesite; tipo **Árbol (auto)**.
-- **Capa de 0.08 mm:** para miniaturas muy finas, usa el perfil oficial "0.08mm High Quality".
-- **Más resistencia:** sube las paredes a 5–6 antes de subir el relleno.
+1. **Borra los presets viejos** que empiezan con **"PW"**:
+   - **Proceso:** elige el preset → icono de **papelera** junto al disquete → **Sí**.
+   - **Filamento:** elige el preset → icono de **editar** → **papelera** (*Borrar Perfil*) → **Sí**.
+   - Si no aparece la papelera, cambia primero a otro preset: no se puede borrar el que está en uso.
+2. **Archivo → Importar → Importar configuraciones** → carpeta `process` → **Ctrl + A** → **Abrir**.
+3. Repite con la carpeta `filament`.
+4. Deben quedar **12 procesos** (01–12) y **18 filamentos** en **Ajustes de usuario**.
+   Los de **boquilla 0.2** solo se ven cuando eliges la impresora con **boquilla 0.2**.
+5. Se suben solos a tu cuenta de **Bambu Cloud**.
 
 ---
 
-## 9. Detalles perfectos: tapas con logo y logos en los laterales
+## 7. Calibración (una vez por cada rollo)
 
-### Tapa con logo o letras (como "FIDELIS PREMURA")
+1. **Calibración → Dinámica de flujo**:
+   - Configúrala así: método **Manual**, placa **PEI texturizada**, el filamento del rollo y su ranura del AMS.
+   - Imprime la prueba y elige la línea más pareja.
+   - Guarda el resultado y asígnalo a la ranura en **Dispositivo**.
+2. **Calibración → Velocidad de flujo**:
+   - Haz la pasada 1 y la pasada 2, y elige el cuadrito más liso.
+   - Guarda el filamento (disquete).
+3. **Velocidad volumétrica máxima**: sáltala, ya está ajustada.
+4. **En la impresora**, una sola vez: Configuración → Calibración → nivelación, vibraciones y ruido del motor.
+5. **Secado:** PETG 65 °C / 6 h · TPU 55 °C / 6 h · PLA Silk 55 °C / 8 h.
 
-**Opción A – Logo boca abajo (el mejor acabado):**
-1. Diseña el logo **embutido al ras** de la tapa, con **0.4–0.6 mm** de grosor
-   (3–5 capas de 0.12 mm).
-2. En Bambu Studio, voltea la tapa para que **la cara del logo quede contra la placa**.
-3. Asigna los colores: clic derecho en la pieza del logo → *Cambiar el filamento* (o la herramienta
-   **Pintura de colores**). El AMS cambia de color solo en esas primeras capas: se gasta poco y queda perfecto.
-4. Proceso: **PW Calidad Fina 0.12mm**.
-5. La cara del logo copia la textura de la placa: con **PEI texturizada** sale con textura fina mate;
-   con una placa lisa sale brillante.
+---
 
-**Opción B – Logo hacia arriba:**
-1. Proceso: **PW Tapa Logo 0.12mm** (trae **alisado** en las superficies superiores: la tapa y el logo
-   quedan lisos).
-2. Logo en relieve o embutido de **0.36–0.6 mm**.
-3. No uses esta opción con **PLA Silk**: el alisado le quita el brillo. Con silk usa la opción A.
+## 8. Tapas y logos en los laterales
 
-### Logo en una pared lateral (como el grabado de 30 mm × 0.6 mm de profundidad)
+**Tapa con logo – el mejor acabado (logo boca abajo):**
+1. Diseña el logo **embutido al ras** de la tapa, con 0.4–0.6 mm de grosor.
+2. Voltea la tapa para que la cara del logo quede **contra la placa**.
+3. Asigna los colores: clic derecho en el logo → *Cambiar el filamento* (o **Pintura de colores**).
+4. Proceso **01 Porcelana 0.12**. La cara copia la textura de la placa: textura fina mate con PEI
+   texturizada, brillante con placa lisa.
 
-1. Proceso: **PW Laterales Detalle 0.08mm** (capas de 0.08 mm, pared externa lenta y precisa).
-2. La costura está puesta en **Atrás** (en el menú en español puede salir como *Volver*): gira la pieza para que **el logo NO quede en la cara trasera**.
-   También puedes usar la herramienta **Pintar la costura** y marcar una esquina lejos del logo.
-3. **Para ahorrar tiempo:** clic derecho en la pieza → **Añadir rango de altura** → pon **0.08 mm** solo en la
-   altura donde está el logo y deja el resto de la pieza con **PW Calidad 0.16mm**.
-4. **Grabado (hundido)** se ve mejor que en relieve en paredes verticales. 0.6 mm de profundidad está bien.
-5. Un logo de otro color en una pared lateral se puede hacer con el AMS, pero cambia de color en
-   **cada capa** de esa zona: tarda mucho y gasta bastante filamento.
+**Tapa con logo hacia arriba:**
+1. Proceso **03 Tapa con Logo 0.12**: el planchado deja la tapa y el logo lisos.
+2. Usa un logo en relieve o embutido de 0.36–0.6 mm.
 
-### Reglas de diseño para que el detalle salga
+**Logo en una pared lateral:**
+1. Proceso **04 Laterales con Logo 0.08**. La costura va **atrás** (en el menú puede salir como
+   *Volver*), así que no pongas el logo en la cara trasera. También puedes usar **Pintar la costura**.
+2. **Para ahorrar tiempo:** clic derecho en la pieza → **Añadir rango de altura** → 0.08 mm solo en la zona
+   del logo, y el resto con 02.
+3. **Grabado (hundido)** se ve mejor que en relieve en paredes verticales.
+
+**Medidas mínimas de diseño:**
 
 | Detalle | Boquilla 0.4 | Boquilla 0.2 |
 |---|---|---|
-| Grosor mínimo de línea del logo / letra | **0.5 mm** | **0.25 mm** |
-| Altura mínima de letra (fuente gruesa) | **4 mm** | **2 mm** |
-| Separación mínima entre líneas | **0.4 mm** | **0.2 mm** |
-| Profundidad / relieve recomendado | 0.4–0.6 mm | 0.2–0.4 mm |
-
-Las letras pequeñas (como "ERGO M575S") en fuente **gruesa (bold)** y sin serifas salen mucho mejor.
+| Grosor de línea del logo / letra | 0.5 mm | 0.25 mm |
+| Altura de letra (fuente gruesa) | 4 mm | 2 mm |
+| Separación entre líneas | 0.4 mm | 0.2 mm |
+| Profundidad / relieve | 0.4–0.6 mm | 0.2–0.4 mm |
 
 ---
 
-## 10. Miniaturas y piezas chicas (cualquier escala)
+## 9. Miniaturas (cualquier escala)
 
-En vez de fijarte en la escala, fíjate en **el detalle más pequeño** de la pieza:
+Fíjate en **el detalle más pequeño**, no en la escala:
 
-| Detalle más pequeño | Qué usar |
+| Detalle más pequeño | Usa |
 |---|---|
-| Mayor a 1 mm (piezas grandes, escala 1:24 o mayor) | Boquilla 0.4 → **PW Calidad Fina 0.12mm** |
-| 0.5 – 1 mm (figuras 1:35, 1:48, maquetas) | Boquilla 0.4 → **PW Miniatura 0.08mm** |
-| 0.25 – 0.5 mm (1:72, 1:87, piezas finas) | Boquilla 0.2 → **PW Detalle 0.10mm (boquilla 0.2)** |
-| Menor a 0.25 mm (1:100, 1:144, figuras de 10–20 mm) | Boquilla 0.2 → **PW Miniatura 0.06mm (boquilla 0.2)** |
+| Mayor a 1 mm | **01 Porcelana 0.12** (boquilla 0.4) |
+| 0.5 – 1 mm (1:35, 1:48) | **09 Miniatura 0.08 (boquilla 0.4)** |
+| 0.25 – 0.5 mm (1:72, 1:87) | **11 Detalle 0.10 (boquilla 0.2)** |
+| Menor a 0.25 mm (1:100, 1:144) | **10 Miniatura 0.06 (boquilla 0.2)** |
 
-Para maquetas de arquitectura 1:100, la boquilla 0.4 sirve para los edificios. Usa la 0.2 para ventanas,
-barandales, personas y árboles.
+**Boquilla 0.2:**
+- Compra el **hotend de 0.2 mm para P1S**.
+- Pon el diámetro **0.2** en la pantalla de la impresora y en Bambu Studio.
+- Usa los filamentos que dicen **(boquilla 0.2)**.
+- No uses TPU, filamentos con carga (carbono, madera, glow) ni filamento húmedo.
 
-### Usar la boquilla 0.2
+**Consejos para miniaturas:**
+- El **PLA mate gris** es el que mejor muestra el detalle.
+- Inclina la figura **30–45°** hacia atrás para que la cara no lleve soportes.
+- Imprime varias a la vez: cada capa tiene más tiempo para enfriarse y los detalles salen más definidos.
 
-1. Compra el **hotend de 0.2 mm para P1S** (Bambu Lab, acero inoxidable). Se cambia en 2 minutos y no
-   hace falta desarmar nada.
-2. En la pantalla de la impresora, ajusta el **diámetro de boquilla a 0.2**.
-3. En Bambu Studio, en la impresora elige **diámetro 0.2**. Ahí aparecen los presets **(boquilla 0.2)**.
-4. Filamentos para 0.2: **PW PLA Bambu Basic / PLA Bambu Matte / PLA Generico / PETG Generico (boquilla 0.2)**.
-   Elegoo, MexicoMakers y SUNLU usan **PW PLA Generico (boquilla 0.2)**.
-5. Con la 0.2 **no uses**: TPU, filamentos con carga (carbono, madera, glow), ni filamento húmedo
-   (se tapa fácil). Sécalo siempre antes.
+---
 
-### Consejos para miniaturas
+## 10. Reglas de la P1S Combo
 
-- El **PLA mate gris** es el que mejor muestra el detalle. El silk y los colores muy oscuros esconden detalle.
-- Los presets de miniatura traen **soportes de árbol** activados. Inclina la figura **30–45°** hacia
-  atrás para que la cara y los detalles no lleven soportes.
-- Imprime **varias miniaturas a la vez**: cada capa tiene más tiempo para enfriarse y los detalles
-  salen más definidos.
-- Para retirar soportes de piezas pequeñas, usa pinzas finas y un cúter; no las jales con la mano.
+- **PLA:** puerta abierta o tapa levantada.
+- **PETG:** puerta cerrada.
+- **ABS / ASA:** puerta cerrada, proceso **05 Resistente** y cuarto ventilado.
+- **TPU:** siempre en la ranura **Ext**, nunca en el AMS.
+- **PETG en placa lisa:** usa pegamento en barra para que no arranque trozos de la placa.
+- **Filamentos con carbono, madera o glow:** solo con boquilla de **acero endurecido**.
+- **AMS:** no mezcles PLA y PETG en la misma pieza (solo como interfaz de soportes).
+  Si cambias de un color oscuro a uno claro, sube los **volúmenes de purga** a ×1.2–1.5.

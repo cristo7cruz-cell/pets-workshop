@@ -1,11 +1,11 @@
 {
     "type": "process",
-    "name": "PW Laterales Detalle 0.08mm @P1S",
+    "name": "09 Miniatura 0.08 (boquilla 0.4)",
     "inherits": "0.08mm High Quality @BBL X1C",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
-    "print_settings_id": "PW Laterales Detalle 0.08mm @P1S",
+    "print_settings_id": "09 Miniatura 0.08 (boquilla 0.4)",
     "wall_generator": "arachne",
     "seam_position": "back",
     "top_surface_pattern": "monotonicline",
@@ -13,47 +13,47 @@
     "elefant_foot_compensation": "0.15",
     "brim_type": "auto_brim",
     "support_type": "tree(auto)",
-    "enable_support": "0",
+    "enable_support": "1",
+    "precise_outer_wall": "1",
+    "small_perimeter_speed": [
+        "50%",
+        "50%"
+    ],
     "override_filament_scarf_seam_setting": "1",
     "seam_slope_type": "external",
     "seam_slope_conditional": "1",
     "scarf_angle_threshold": "155",
     "seam_slope_start_height": "10%",
-    "seam_slope_min_length": "15",
+    "seam_slope_min_length": "5",
     "seam_slope_steps": "10",
     "seam_slope_entire_loop": "0",
     "seam_slope_inner_walls": "1",
-    "small_perimeter_speed": [
-        "50%",
-        "50%"
-    ],
-    "wall_loops": "3",
-    "precise_outer_wall": "1",
-    "top_shell_layers": "10",
+    "ironing_type": "top",
+    "ironing_flow": "10%",
+    "ironing_spacing": "0.12",
+    "ironing_speed": "25",
+    "wall_loops": "2",
+    "top_shell_layers": "12",
     "bottom_shell_layers": "7",
     "sparse_infill_density": "15%",
     "outer_wall_speed": [
-        "40",
-        "40"
+        "30",
+        "30"
     ],
     "inner_wall_speed": [
-        "80",
-        "80"
+        "60",
+        "60"
     ],
     "top_surface_speed": [
-        "80",
-        "80"
+        "60",
+        "60"
     ],
     "outer_wall_acceleration": [
         "1000",
         "1000"
     ],
-    "top_surface_acceleration": [
-        "1000",
-        "1000"
-    ],
     "default_acceleration": [
-        "3000",
-        "3000"
+        "2500",
+        "2500"
     ]
 }

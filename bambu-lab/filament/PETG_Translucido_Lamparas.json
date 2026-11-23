@@ -1,52 +1,56 @@
 {
     "type": "filament",
-    "name": "PW PLA Bambu Basic @P1S 0.2",
-    "inherits": "Bambu PLA Basic @BBL X1C 0.2 nozzle",
+    "name": "PETG Translucido - Lamparas",
+    "inherits": "Bambu PETG Translucent @BBL X1C",
     "from": "User",
     "instantiation": "true",
     "version": "02.09.00.74",
     "filament_settings_id": [
-        "PW PLA Bambu Basic @P1S 0.2"
+        "PETG Translucido - Lamparas"
     ],
     "compatible_printers": [
-        "Bambu Lab P1S 0.2 nozzle"
+        "Bambu Lab P1S 0.4 nozzle"
     ],
     "nozzle_temperature": [
-        "215",
-        "215"
+        "250",
+        "250"
     ],
     "nozzle_temperature_initial_layer": [
-        "220",
-        "220"
+        "250",
+        "250"
     ],
     "textured_plate_temp": [
-        "55"
+        "70"
     ],
     "textured_plate_temp_initial_layer": [
-        "60"
+        "75"
     ],
     "hot_plate_temp": [
-        "55"
+        "70"
     ],
     "hot_plate_temp_initial_layer": [
-        "60"
+        "75"
     ],
     "filament_max_volumetric_speed": [
-        "2",
-        "2"
+        "6",
+        "6"
     ],
     "fan_min_speed": [
-        "100"
-    ],
-    "fan_max_speed": [
-        "100"
-    ],
-    "close_fan_the_first_x_layers": [
-        "1"
-    ],
-    "slow_down_layer_time": [
         "10"
     ],
+    "fan_max_speed": [
+        "30"
+    ],
+    "overhang_fan_speed": [
+        "80"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "slow_down_layer_time": [
+        "12"
+    ],
+    "ironing_fan_speed": "20",
     "filament_scarf_seam_type": [
         "external"
     ],
@@ -54,6 +58,6 @@
         "10%"
     ],
     "filament_scarf_length": [
-        "5"
+        "15"
     ]
 }
