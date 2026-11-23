@@ -160,10 +160,12 @@ grupo **Costura**. En español Bambu Studio la llama a veces "costura de **cicat
 
 ## 6. Cómo importarlas (y quitar las anteriores)
 
-1. **Borra los presets viejos** que empiezan con **"PW"**:
-   - **Proceso:** elige el preset → icono de **papelera** junto al disquete → **Sí**.
-   - **Filamento:** elige el preset → icono de **editar** → **papelera** (*Borrar Perfil*) → **Sí**.
-   - Si no aparece la papelera, cambia primero a otro preset: no se puede borrar el que está en uso.
+1. **Borra los presets viejos** que empiezan con **"PW"** (uno por uno):
+   - **Filamento:** elige el preset PW en una ranura → icono de **editar** junto al filamento → arriba,
+     al lado del disquete, la **X** (*Borra este ajuste*) → **Sí**.
+   - **Proceso:** elige el preset PW → en los ajustes de proceso, la **X** junto al disquete → **Sí**.
+   - La **X** solo aparece en presets de usuario. Si está gris, el preset se está usando en el proyecto:
+     cámbialo primero por otro.
 2. **Archivo → Importar → Importar configuraciones** → carpeta `process` → **Ctrl + A** → **Abrir**.
 3. Repite con la carpeta `filament`.
 4. Deben quedar **12 procesos** (01–12) y **18 filamentos** en **Ajustes de usuario**.
