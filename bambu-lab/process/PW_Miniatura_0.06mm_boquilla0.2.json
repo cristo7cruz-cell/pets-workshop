@@ -1,0 +1,52 @@
+{
+    "type": "process",
+    "name": "PW Miniatura 0.06mm @P1S 0.2",
+    "inherits": "0.06mm High Quality @BBL X1C 0.2 nozzle",
+    "from": "User",
+    "instantiation": "true",
+    "version": "02.09.00.74",
+    "print_settings_id": "PW Miniatura 0.06mm @P1S 0.2",
+    "wall_generator": "arachne",
+    "seam_position": "back",
+    "top_surface_pattern": "monotonicline",
+    "sparse_infill_pattern": "gyroid",
+    "elefant_foot_compensation": "0.15",
+    "brim_type": "auto_brim",
+    "support_type": "tree(auto)",
+    "enable_support": "1",
+    "override_filament_scarf_seam_setting": "1",
+    "seam_slope_type": "external",
+    "seam_slope_conditional": "1",
+    "scarf_angle_threshold": "155",
+    "seam_slope_start_height": "10%",
+    "seam_slope_min_length": "5",
+    "seam_slope_steps": "10",
+    "seam_slope_entire_loop": "0",
+    "seam_slope_inner_walls": "1",
+    "small_perimeter_speed": [
+        "50%",
+        "50%"
+    ],
+    "sparse_infill_density": "15%",
+    "wall_loops": "3",
+    "outer_wall_speed": [
+        "30",
+        "30"
+    ],
+    "inner_wall_speed": [
+        "50",
+        "50"
+    ],
+    "top_surface_speed": [
+        "50",
+        "50"
+    ],
+    "outer_wall_acceleration": [
+        "1000",
+        "1000"
+    ],
+    "default_acceleration": [
+        "2500",
+        "2500"
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "type": "filament",
+    "name": "PW PLA Bambu Basic @P1S 0.2",
+    "inherits": "Bambu PLA Basic @BBL X1C 0.2 nozzle",
+    "from": "User",
+    "instantiation": "true",
+    "version": "02.09.00.74",
+    "filament_settings_id": [
+        "PW PLA Bambu Basic @P1S 0.2"
+    ],
+    "compatible_printers": [
+        "Bambu Lab P1S 0.2 nozzle"
+    ],
+    "nozzle_temperature": [
+        "215",
+        "215"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "220",
+        "220"
+    ],
+    "textured_plate_temp": [
+        "55"
+    ],
+    "textured_plate_temp_initial_layer": [
+        "60"
+    ],
+    "hot_plate_temp": [
+        "55"
+    ],
+    "hot_plate_temp_initial_layer": [
+        "60"
+    ],
+    "filament_max_volumetric_speed": [
+        "2",
+        "2"
+    ],
+    "fan_min_speed": [
+        "100"
+    ],
+    "fan_max_speed": [
+        "100"
+    ],
+    "close_fan_the_first_x_layers": [
+        "1"
+    ],
+    "slow_down_layer_time": [
+        "10"
+    ],
+    "filament_scarf_seam_type": [
+        "external"
+    ],
+    "filament_scarf_height": [
+        "10%"
+    ],
+    "filament_scarf_length": [
+        "5"
+    ]
+}

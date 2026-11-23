@@ -22,6 +22,11 @@
 | **PW Resistente 0.20mm** | 0.20mm Strength | Piezas funcionales con carga o golpes (PETG, ABS, ASA). |
 | **PW Transparente 0.20mm** | 0.20mm Standard | Piezas con filamento transparente: relleno 100 %, líneas en una sola dirección, lento. |
 | **PW TPU Flexible 0.20mm** | 0.20mm Standard | Solo TPU: muy lento y sin costura bufanda. |
+| **PW Tapa Logo 0.12mm** | 0.12mm High Quality | Tapas con logo o letras arriba: **alisado** activado para dejar la tapa lisa (ver sección 9). |
+| **PW Laterales Detalle 0.08mm** | 0.08mm High Quality | Logos grabados o en relieve en las **paredes laterales** (ver sección 9). |
+| **PW Miniatura 0.08mm** | 0.08mm High Quality | Miniaturas con la boquilla **0.4** normal; soportes de árbol activados (ver sección 10). |
+| **PW Miniatura 0.06mm (boquilla 0.2)** | 0.06mm High Quality 0.2 | Miniaturas muy pequeñas (1:100, 1:144…). **Necesita boquilla 0.2.** |
+| **PW Detalle 0.10mm (boquilla 0.2)** | 0.10mm High Quality 0.2 | Piezas pequeñas con mucho detalle, más rápido que el de 0.06. **Necesita boquilla 0.2.** |
 
 | Ajuste | Fina 0.12 | Calidad 0.16 | Resistente 0.20 | Transparente 0.20 | TPU 0.20 |
 |---|---|---|---|---|---|
@@ -54,6 +59,7 @@
 | `FILAMENTO_TRANSPARENTE` (si es PLA) | **PW PLA MexicoMakers-Generico** + proceso **PW Transparente** |
 | Bambu PLA Basic / PLA Matte / PETG HF | **PW PLA Bambu Basic** / **PW PLA Bambu Matte** / **PW PETG Bambu HF** |
 | TPU 95A (cualquier marca) | **PW TPU 95A** |
+| Cualquier PLA/PETG con **boquilla 0.2** | **PW PLA Bambu Basic / PLA Bambu Matte / PLA Generico / PETG Generico (boquilla 0.2)** |
 | ABS / ASA (por si compras) | **PW ABS** / **PW ASA** |
 
 **Valores principales** (boquilla 1ª capa / resto · cama PEI 1ª capa / resto · flujo máx.):
@@ -91,7 +97,8 @@ velocidad, la impresora nunca empuja más plástico que ese límite.
 ## 3. Cómo importarlas
 
 1. En Bambu Studio: **Archivo → Importar → Importar configuraciones…**
-2. Selecciona **todos** los `.json` de `process/` y de `filament/` (18 archivos).
+2. Selecciona **todos** los `.json` de `process/` y de `filament/` (27 archivos: 10 de proceso y 17 de filamento).
+   Los de **boquilla 0.2** solo aparecen cuando eliges la impresora **P1S con boquilla 0.2**; es normal no verlos con la 0.4.
 3. Aparecerán en **Ajustes de usuario** (dentro de **Personalizado**), igual que tus presets actuales.
 4. Si eso no funciona, abre el perfil base que dice la tabla, cambia a mano los valores de las tablas y
    guárdalo con el mismo nombre (ver la sección 4).
@@ -198,3 +205,83 @@ de flujo de la rampa; la costura sale peor. Para TPU se usa la costura alineada 
 - **Soportes:** actívalos solo cuando la pieza los necesite; tipo **Árbol (auto)**.
 - **Capa de 0.08 mm:** para miniaturas muy finas, usa el perfil oficial "0.08mm High Quality".
 - **Más resistencia:** sube las paredes a 5–6 antes de subir el relleno.
+
+---
+
+## 9. Detalles perfectos: tapas con logo y logos en los laterales
+
+### Tapa con logo o letras (como "FIDELIS PREMURA")
+
+**Opción A – Logo boca abajo (el mejor acabado):**
+1. Diseña el logo **embutido al ras** de la tapa, con **0.4–0.6 mm** de grosor
+   (3–5 capas de 0.12 mm).
+2. En Bambu Studio, voltea la tapa para que **la cara del logo quede contra la placa**.
+3. Asigna los colores: clic derecho en la pieza del logo → *Cambiar el filamento* (o la herramienta
+   **Pintura de colores**). El AMS cambia de color solo en esas primeras capas: se gasta poco y queda perfecto.
+4. Proceso: **PW Calidad Fina 0.12mm**.
+5. La cara del logo copia la textura de la placa: con **PEI texturizada** sale con textura fina mate;
+   con una placa lisa sale brillante.
+
+**Opción B – Logo hacia arriba:**
+1. Proceso: **PW Tapa Logo 0.12mm** (trae **alisado** en las superficies superiores: la tapa y el logo
+   quedan lisos).
+2. Logo en relieve o embutido de **0.36–0.6 mm**.
+3. No uses esta opción con **PLA Silk**: el alisado le quita el brillo. Con silk usa la opción A.
+
+### Logo en una pared lateral (como el grabado de 30 mm × 0.6 mm de profundidad)
+
+1. Proceso: **PW Laterales Detalle 0.08mm** (capas de 0.08 mm, pared externa lenta y precisa).
+2. La costura está puesta en **Atrás** (en el menú en español puede salir como *Volver*): gira la pieza para que **el logo NO quede en la cara trasera**.
+   También puedes usar la herramienta **Pintar la costura** y marcar una esquina lejos del logo.
+3. **Para ahorrar tiempo:** clic derecho en la pieza → **Añadir rango de altura** → pon **0.08 mm** solo en la
+   altura donde está el logo y deja el resto de la pieza con **PW Calidad 0.16mm**.
+4. **Grabado (hundido)** se ve mejor que en relieve en paredes verticales. 0.6 mm de profundidad está bien.
+5. Un logo de otro color en una pared lateral se puede hacer con el AMS, pero cambia de color en
+   **cada capa** de esa zona: tarda mucho y gasta bastante filamento.
+
+### Reglas de diseño para que el detalle salga
+
+| Detalle | Boquilla 0.4 | Boquilla 0.2 |
+|---|---|---|
+| Grosor mínimo de línea del logo / letra | **0.5 mm** | **0.25 mm** |
+| Altura mínima de letra (fuente gruesa) | **4 mm** | **2 mm** |
+| Separación mínima entre líneas | **0.4 mm** | **0.2 mm** |
+| Profundidad / relieve recomendado | 0.4–0.6 mm | 0.2–0.4 mm |
+
+Las letras pequeñas (como "ERGO M575S") en fuente **gruesa (bold)** y sin serifas salen mucho mejor.
+
+---
+
+## 10. Miniaturas y piezas chicas (cualquier escala)
+
+En vez de fijarte en la escala, fíjate en **el detalle más pequeño** de la pieza:
+
+| Detalle más pequeño | Qué usar |
+|---|---|
+| Mayor a 1 mm (piezas grandes, escala 1:24 o mayor) | Boquilla 0.4 → **PW Calidad Fina 0.12mm** |
+| 0.5 – 1 mm (figuras 1:35, 1:48, maquetas) | Boquilla 0.4 → **PW Miniatura 0.08mm** |
+| 0.25 – 0.5 mm (1:72, 1:87, piezas finas) | Boquilla 0.2 → **PW Detalle 0.10mm (boquilla 0.2)** |
+| Menor a 0.25 mm (1:100, 1:144, figuras de 10–20 mm) | Boquilla 0.2 → **PW Miniatura 0.06mm (boquilla 0.2)** |
+
+Para maquetas de arquitectura 1:100, la boquilla 0.4 sirve para los edificios. Usa la 0.2 para ventanas,
+barandales, personas y árboles.
+
+### Usar la boquilla 0.2
+
+1. Compra el **hotend de 0.2 mm para P1S** (Bambu Lab, acero inoxidable). Se cambia en 2 minutos y no
+   hace falta desarmar nada.
+2. En la pantalla de la impresora, ajusta el **diámetro de boquilla a 0.2**.
+3. En Bambu Studio, en la impresora elige **diámetro 0.2**. Ahí aparecen los presets **(boquilla 0.2)**.
+4. Filamentos para 0.2: **PW PLA Bambu Basic / PLA Bambu Matte / PLA Generico / PETG Generico (boquilla 0.2)**.
+   Elegoo, MexicoMakers y SUNLU usan **PW PLA Generico (boquilla 0.2)**.
+5. Con la 0.2 **no uses**: TPU, filamentos con carga (carbono, madera, glow), ni filamento húmedo
+   (se tapa fácil). Sécalo siempre antes.
+
+### Consejos para miniaturas
+
+- El **PLA mate gris** es el que mejor muestra el detalle. El silk y los colores muy oscuros esconden detalle.
+- Los presets de miniatura traen **soportes de árbol** activados. Inclina la figura **30–45°** hacia
+  atrás para que la cara y los detalles no lleven soportes.
+- Imprime **varias miniaturas a la vez**: cada capa tiene más tiempo para enfriarse y los detalles
+  salen más definidos.
+- Para retirar soportes de piezas pequeñas, usa pinzas finas y un cúter; no las jales con la mano.
